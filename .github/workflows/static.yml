@@ -4,7 +4,7 @@ name: Deploy static content to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["main-fixme"] # Temporary disabled !!!!!!!!!!!!!!!!!!
+    branches: ["main"] 
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -22,6 +22,10 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Require assets to be build
+  build:
+    uses: ./.github/workflows/build.yml
+
   # Single deploy job since we're just deploying
   deploy:
     environment:
@@ -37,7 +41,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload entire repository
-          path: 'public/'
+          path: 'out/'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1

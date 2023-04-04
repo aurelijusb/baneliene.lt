@@ -1,8 +1,6 @@
 name: Build Next.js
 
-on:
-  push:
-    branches: [ main ]
+on: [workflow_call]
 
 jobs:
   build:
@@ -15,3 +13,4 @@ jobs:
       - run: npm install -g yarn
       - run: yarn install --frozen-lockfile
       - run: yarn build
+      - run: yarn export
