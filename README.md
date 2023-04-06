@@ -32,6 +32,4 @@ Open [https://www.baneliene.lt/](https://www.baneliene.lt/)
 - [GitHub Pages](https://pages.github.com/) - static site hosting
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-## TODO: https://nextjs.org/learn/foundations/from-javascript-to-react/building-ui-with-components
-## TODO: https://nextjs.org/docs/basic-features/data-fetching/get-static-props
+- [TailWindCSS](https://tailwindcss.com/docs/editor-setup) – tools for Styling
