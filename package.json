@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "export": "next export",
+    "view": "http-serve out/",
     "start": "next start",
     "lint": "next lint"
   },
@@ -20,5 +21,8 @@
     "react-dom": "^18.2.0",
     "typescript": "5.0.2",
     "yarn": "^1.22.19"
+  },
+  "devDependencies": {
+    "http-serve": "^1.0.1"
   }
 }
