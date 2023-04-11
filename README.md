@@ -1,5 +1,4 @@
-Static site deployment example
-==============================
+# Static site deployment example
 
 ## Local development
 
@@ -22,8 +21,8 @@ Proxies `/out` via [http://127.0.0.1:8080](http://127.0.0.1:8080)
 
 ## Deployment
 
-* Merge to `main`
-* Github actions would [build](.github/workflows/build.yml) and [deploy](.github/workflows/deploy.yml)
+- Merge to `main`
+- Github actions would [build](.github/workflows/build.yml) and [deploy](.github/workflows/deploy.yml)
 
 Open [https://www.baneliene.lt/](https://www.baneliene.lt/)
 
@@ -32,4 +31,5 @@ Open [https://www.baneliene.lt/](https://www.baneliene.lt/)
 - [GitHub Pages](https://pages.github.com/) - static site hosting
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [getStaticProps](https://nextjs.org/docs/basic-features/data-fetching/get-static-props) - compile time execution
 - [TailWindCSS](https://tailwindcss.com/docs/editor-setup) – tools for Styling
