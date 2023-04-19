@@ -1,19 +1,14 @@
-import fs from 'fs'
-import YAML from 'yaml'
-
-export interface Storage {
-    presentations: Presentations
+export interface Presentations {
+  presentations: Array<Presentation>
 }
 
-export type Presentations = Array<Presentation>
+interface SanityDefaults {
+  _id?: string
+  _rev?: string
+  _type?: string
+}
 
-export interface Presentation {
+export interface Presentation extends SanityDefaults {
   Title: string
   Image: string
 }
-
-export default function Load(): Storage {
-    const file = fs.readFileSync("data/main.yml", { encoding: 'utf8' })
-    return YAML.parse(file) as Storage
-}
-

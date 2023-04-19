@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Load, { Presentation } from '../data/load'
+import { Presentations, Presentation } from '../data/load'
+import { createClient } from "next-sanity";
 
-export default function Home({presentations}: Storage) {
+export default function Home({presentations}: Presentations) {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -34,13 +35,23 @@ export default function Home({presentations}: Storage) {
   )
 }
 
+const client = createClient({
+  projectId: "ix7hxd2q",
+  dataset: "production",
+  apiVersion: "2022-03-25",
+  useCdn: false,
+});
+
 export async function getStaticProps() {
   try {
-    const data = Load()
-    console.log("Loaded", data)
+    const data = await client.fetch(`*[_type == "presentation"] {
+      Title,
+      "Image": Image.asset->url
+    }`) as Presentations;
+
     return {
         props: {
-        presentations: data.presentations,
+          presentations: data,
       }
     }
   } catch (err) {
