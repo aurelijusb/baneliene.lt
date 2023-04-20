@@ -30,10 +30,11 @@ Open [https://www.baneliene.lt/](https://www.baneliene.lt/)
 
 [https://baneliene-lt.sanity.studio/](https://baneliene-lt.sanity.studio/)
 
-Which is generated via code in `cms` folder:
+Which is generated via code in [`cms` folder](./cms/README.md):
 
 ```bash
 cd cms/
+yarn
 yarn dev
 yarn build
 yarn deploy
