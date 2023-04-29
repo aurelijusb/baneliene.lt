@@ -1,9 +1,14 @@
 # Sanity Clean Content Studio
 
-Congratulations, you have now installed the Sanity Content Studio, an open source real-time content editing environment connected to the Sanity backend.
+As a content management system.
 
-Now you can do the following things:
+## Configuring preview
 
-- [Read “getting started” in the docs](https://www.sanity.io/docs/introduction/getting-started?utm_source=readme)
-- [Join the community Slack](https://slack.sanity.io/?utm_source=readme)
-- [Extend and build plugins](https://www.sanity.io/docs/content-studio/extending?utm_source=readme)
+Allow cors on Sanity: https://www.sanity.io/guides/nextjs-live-preview#414c58a4f2e6
+
+```
+http://localhost:3000
+```
+
+Generate API token with Read access: https://www.sanity.io/docs/http-auth
+It will be used to use Preview functionality (even on statically generated code).

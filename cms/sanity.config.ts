@@ -2,15 +2,22 @@ import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
+import {defaultDocumentNode} from './src/defaultDocumentNode'
+import sanityConfig from '../sanity.json'
 
 export default defineConfig({
   name: 'default',
   title: 'Baneliene.lt',
 
-  projectId: 'ix7hxd2q',
-  dataset: 'production',
+  projectId: sanityConfig.api.projectId,
+  dataset: sanityConfig.api.dataset,
 
-  plugins: [deskTool(), visionTool()],
+  plugins: [
+    deskTool({
+      defaultDocumentNode,
+    }),
+    visionTool(),
+  ],
 
   schema: {
     types: schemaTypes,
