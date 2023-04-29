@@ -1,9 +1,8 @@
 import Home, { query } from "@/components/Home";
 import { useState } from "react";
 import { Presentation } from "../../data/load";
-import { DynamicToken } from "./DynamicToken";
 import { SanityPreview } from "../../lib/SanityPreview";
-import { PreviewSuspense } from "next-sanity/preview";
+import { DynamicToken } from "./DynamicToken";
 
 export default function Preview() {
   const [presentations, setPresentations] = useState<Presentation[]>([]);

@@ -8,6 +8,7 @@ Allow cors on Sanity: https://www.sanity.io/guides/nextjs-live-preview#414c58a4f
 
 ```
 http://localhost:3000
+https://www.baneliene.lt
 ```
 
 Generate API token with Read access: https://www.sanity.io/docs/http-auth

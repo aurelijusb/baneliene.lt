@@ -1,0 +1,8 @@
+{
+  "sanity": {
+    "hostMapping": {
+      "localhost:3333": "http://localhost:3000",
+      "baneliene-lt.sanity.studio": "https://www.baneliene.lt"
+    }
+  }
+}
