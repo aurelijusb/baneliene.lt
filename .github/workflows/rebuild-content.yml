@@ -8,5 +8,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Confirm received
-        run: echo "Received from Sanity.io!"
+      - name: Received
+        run: |
+          echo "Payload: ${{ github.event.client_payload }}"
