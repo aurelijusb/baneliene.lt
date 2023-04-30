@@ -38,3 +38,6 @@ next-env.d.ts
 # IDE
 .vscode
 .idea
+
+# Temporaru while debugging Web hooks
+.github/workflows/test.sh

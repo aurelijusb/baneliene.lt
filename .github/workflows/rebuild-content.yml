@@ -1,10 +1,12 @@
 name: Rebuild site when Dynamic content is Published
 
-on: [push]
+on:
+  repository_dispatch:
+    types: [sanity_webhook_trigger]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Say Hello
-        run: echo "Hello, World!"
+      - name: Confirm received
+        run: echo "Received from Sanity.io!"
