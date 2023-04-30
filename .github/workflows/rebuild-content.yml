@@ -5,9 +5,12 @@ on:
     types: [sanity_webhook_trigger]
 
 jobs:
-  build:
+  received:
     runs-on: ubuntu-latest
     steps:
-      - name: Received
-        run: |
-          echo "Payload: ${{ github.event.client_payload }}"
+    - name: Dump GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: |
+        echo "$GITHUB_CONTEXT"
+
