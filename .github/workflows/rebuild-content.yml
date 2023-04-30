@@ -1,0 +1,10 @@
+name: Rebuild site when Dynamic content is Published
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello
+        run: echo "Hello, World!"
