@@ -4,10 +4,12 @@ import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
 import {defaultDocumentNode} from './src/defaultDocumentNode'
 import sanityConfig from '../sanity.json'
+import cmsConfig from '../cms.config.json'
+import {githubTool} from './plugins/github/githubTool'
 
 export default defineConfig({
   name: 'default',
-  title: 'Baneliene.lt',
+  title: cmsConfig.gitHub.repository.name,
 
   projectId: sanityConfig.api.projectId,
   dataset: sanityConfig.api.dataset,
@@ -17,8 +19,8 @@ export default defineConfig({
       defaultDocumentNode,
     }),
     visionTool(),
+    githubTool(),
   ],
-
   schema: {
     types: schemaTypes,
   },
