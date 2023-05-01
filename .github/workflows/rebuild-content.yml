@@ -8,9 +8,11 @@ jobs:
   received:
     runs-on: ubuntu-latest
     steps:
-    - name: Dump GitHub context
-      env:
-        GITHUB_CONTEXT: ${{ toJson(github) }}
-      run: |
-        echo "$GITHUB_CONTEXT"
+     - name: Debug initiator
+       run: |
+          echo "By: ${{ github.triggering_actor }}"
+          echo "From: ${{ github.event.client_payload.initiatedFrom }}"
+          echo "What: ${{ github.event.action }}"
+  rebuild:
+    uses: ./.github/workflows/deploy.yml
 

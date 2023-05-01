@@ -6,6 +6,9 @@ on:
   push:
     branches: ["main"] 
 
+  # Allow to run via other workflows
+  workflow_call:
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
