@@ -19,7 +19,7 @@ graph LR;
 
 Deployment flow:
 
-```
+```mermaid
 graph LR;
     Sanity_Studio -- Publish public version --> Sanity_Content
     Sanity_Studio -- Trigger regeneration via GitHub token --> GitHub
@@ -27,7 +27,7 @@ graph LR;
 
 Preview flow:
 
-```
+```mermaid
 graph LR;
     Sanity_Studio -- Store draft version --> Sanity_Content
     GitHubPages -- Fetch draft version via Sanity token --> Sanity_Content
