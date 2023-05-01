@@ -1,9 +1,43 @@
 # Static site deployment example
 
+The goal was to have a cheap to maintain representative WebSite.
+Ideally, with the benefits of fast feedback when developing locally, updating content on holiday.
+Ideally, having extension points when the site would scale.
+
+## Architecture
+
+Main components:
+
+```mermaid
+graph LR;
+    Sanity_Studio -- Store dynamic content --> Sanity_Content
+    Sanity_Studio -- Code saved --> GitHub
+    GitHub -- Fetch on build --> Sanity_Content
+    React -- Code saved --> GitHub
+    GitHub -- Static site deployed --> GitHubPages
+```
+
+Deployment flow:
+
+```
+graph LR;
+    Sanity_Studio -- Publish public version --> Sanity_Content
+    Sanity_Studio -- Trigger regeneration via GitHub token --> GitHub
+```
+
+Preview flow:
+
+```
+graph LR;
+    Sanity_Studio -- Store draft version --> Sanity_Content
+    GitHubPages -- Fetch draft version via Sanity token --> Sanity_Content
+```
+
 ## Local development
 
 ```bash
 nvm use
+yarn
 yarn dev
 ```
 
@@ -30,7 +64,7 @@ Open [https://www.baneliene.lt/](https://www.baneliene.lt/)
 
 [https://baneliene-lt.sanity.studio/](https://baneliene-lt.sanity.studio/)
 
-Which is generated via code in [`cms` folder](./cms/README.md):
+Which is generated via code in [`cms`](./cms/README.md) folder:
 
 ```bash
 cd cms/
